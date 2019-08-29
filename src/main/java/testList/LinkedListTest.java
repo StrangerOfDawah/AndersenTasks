@@ -1,15 +1,12 @@
-package main.java.testList;
+package testList;
 
-import main.java.implementation.LinkedList;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import implementation.LinkedList;
 
 public class LinkedListTest {
 
     private LinkedList<Long> list = new LinkedList<>();
 
-    @Test
+    /*@Test
     public void remove() {
         list.add(0L);
         list.add(1L);
@@ -72,5 +69,5 @@ public class LinkedListTest {
         long expectedSize = 5;
         long actual = list.getSize();
         assertEquals(expectedSize, actual);
-    }
+    }*/
 }
