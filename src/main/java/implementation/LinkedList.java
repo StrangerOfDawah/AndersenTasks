@@ -1,6 +1,7 @@
-package main.java.implementation;
+package implementation;
 
-public class LinkedList<T> implements List<T>{
+
+public class LinkedList<T> implements main.java.implementation.List<T> {
     private Node<T> first;
     private Node<T> last;
     private int size = 0;
