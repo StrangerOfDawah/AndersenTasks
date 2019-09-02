@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface AuthorDao {
 
-    public List<Author> findAll();
-    public Author findById(Integer id);
-    public void insert(Author author);
-    public void update(Author author);
-    public void delete(Author author);
+     List<Author> findAll();
+     Author findById(int id);
+     void insert(Author author);
+     void update(Author author);
+     void delete(int id);
 }
