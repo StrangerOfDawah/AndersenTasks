@@ -1,3 +1,4 @@
+/*
 package dynamicProxyAndCGlib;
 
 
@@ -16,3 +17,4 @@ public class DemoProxy {
 
     }
 }
+*/
