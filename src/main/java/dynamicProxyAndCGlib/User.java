@@ -1,6 +1,8 @@
-package main.java.dynamicProxyAndCGlib;
+package dynamicProxyAndCGlib;
 
-public class User implements IUser {
+
+public class User implements main.java.dynamicProxyAndCGlib.IUser {
+
     private String name;
 
     public User(String name) {
