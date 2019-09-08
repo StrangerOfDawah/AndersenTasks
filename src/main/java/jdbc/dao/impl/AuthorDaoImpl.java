@@ -72,6 +72,7 @@ public class AuthorDaoImpl implements AuthorDao {
 
                     author.setName(rs.getString("author_name"));
                     author.setId(rs.getInt("idAuthor"));
+                    rs.previous();
                     while (rs.next()) {
                         books.add(rs.getString("book_name"));
                     }
@@ -89,6 +90,7 @@ public class AuthorDaoImpl implements AuthorDao {
             throw new RuntimeException(e.getMessage(), e);
         }
     }
+
 
 
     @Override
