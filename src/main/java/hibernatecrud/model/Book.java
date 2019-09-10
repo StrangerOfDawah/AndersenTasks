@@ -1,9 +1,17 @@
 package hibernatecrud.model;
 
+import lombok.*;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "book")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Book {
 
     @Id
@@ -14,34 +22,9 @@ public class Book {
     @Column(name = "book_name")
     private String name;
 
-    public Book() {
-    }
+    @ManyToMany(mappedBy = "books" , fetch = FetchType.LAZY)
 
-    public Book(String name) {
-        this.name = name;
-    }
+    Set<Author> authors = new HashSet<>();
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }

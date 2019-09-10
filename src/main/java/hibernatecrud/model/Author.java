@@ -1,10 +1,19 @@
 package hibernatecrud.model;
 
+import lombok.*;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "author")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Author {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,35 +23,16 @@ public class Author {
     @Column(name = "author_name")
     private String name;
 
-    public Author() {
-    }
+    @ManyToMany(cascade = {
+            CascadeType.ALL
+    }, fetch = FetchType.LAZY)
 
-    public Author(String name) {
-        this.name = name;
-    }
+    @JoinTable(name = "author_book",
+            joinColumns = @JoinColumn(name = "id_author"),
+            inverseJoinColumns = @JoinColumn(name = "id_book")
+    )
 
-    public int getId() {
-        return id;
-    }
+    private Set<Book> books = new HashSet<>();
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Author{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 
 }
