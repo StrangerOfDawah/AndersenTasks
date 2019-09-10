@@ -35,11 +35,11 @@ public class AuthorDaoHiberImpl implements AuthorDao {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Author author) {
 
         Session session = HiberFactory.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
-        session.delete(id);
+        session.delete(author);
         transaction.commit();
         session.close();
     }

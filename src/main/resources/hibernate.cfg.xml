@@ -11,5 +11,6 @@
         <property name="hibernate.connection.password">root</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <mapping class="hibernatecrud.model.Book"/>
         <mapping class="hibernatecrud.model.Author" /></session-factory>
 </hibernate-configuration>
